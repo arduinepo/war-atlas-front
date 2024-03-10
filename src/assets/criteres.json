@@ -1,0 +1,175 @@
+{
+    "myths":{
+        "womenPlot":"Femmes instigatrices de la guerre",
+        "ancestorsRule":"Guerre organisée par les ancêtres",
+        "mythBeastOrigin":"Guerre introduite par un être mythique",
+        "punishment":"Guerre introduite en punition",
+        "diversity":"Apparition de la guerre imputée à la diversité des peuples",
+        "escalation":"Dérapage, escalade de violences",
+        "old":"inimitié originelle non motivée",
+        "firstToRevengeMurder":"Première guerre pour venger un meurtre",
+        "scalpMyth":"Mythologie du scalp",
+        "headsHuntMyth":"Mythologie de la chasse aux têtes",
+        "foundingWar":"Guerre fondatrice"
+    },
+    "gods":{
+        "godOfWar":"dieu de la guerre",
+        "wargoddess": {
+            "label":"déesse de la guerre",
+            "sub":{
+                "virgin":"vierge","mother":"mère"}
+        },
+        "twins":"dioscures",
+        "hunt":"dieu-esse de la chasse",
+        "fertility":"dieu-esse de la fertilité",
+        "green":"dieu-esse de la végétation",
+        "plague":"dieu-esse de la peste (maladie)",
+        "ager":"dieu-esse de l'agriculture",
+        "livestock":"dieu-esse du bétail",
+        "beastMaster":"maître-sse des animaux",
+        "monsterFighter":"affronte un/des monstre-s",
+        "sun":"connotations solaires",
+        "floodPower":"peut susciter un déluge"
+    },
+    "godsAttr":{
+        "metal":"au métal",
+        "storm":"à l'orage",
+        "fire":"au feu",
+        "wind":"au vent",
+        "horse":"au cheval",
+        "bull":"au taureau",
+        "antelope":"à l'antilope",
+        "deer":"au cerf",
+        "boar":"au sanglier",
+        "goat":"au bouc",
+        "elephant":"à l'éléphant",
+        "snake":"au serpent",
+        "lizard":"au lézard"
+    },
+    "animalsLists":{
+        "canide":{"label":"à un canidé","sub":{
+            "wolf":"au loup", "jackal":"au chacal","dog":"au chien"}},
+        "feline":{"label":"à un félin","sub":{
+            "puma":"au puma","tiger":"au tigre","jaguar":"au jaguar","lion":"au lion"}},
+        "birds":
+            {"label":"à un/des oiseau-x",
+            "sub":{
+                "rapace":{
+                    "label":"rapace",
+                    "sub":{
+                        "eagle":"aigle","faucon":"falcon","scavenger":"vautour","owl":"chouette"}},
+                "kingFischer":"martin-pêcheur",
+                "dove":"pigeon,colombe",
+                "woodpecker":"pivert",
+                "crane":"grue",
+                "rooster":"coq",
+                "peacock":"paon",
+                "corvid":"corvidé"}
+        }    
+    },
+    "equips":{
+        "sword":"épée, sabre",
+        "knife":"couteau, poignard",
+        "scythe":"machette",
+        "bowArrows":"arc et flèches",
+        "spear":"sagaie, lance",
+        "axe":"hache",
+        "hammer":"massue, marteau",
+        "hoe":"houe, bêche",
+        "net":"filet",
+        "shield":"bouclier",
+        "armor":"armure",
+        "helmet":"casque",
+        "tank":"char"
+    },
+    "motives":{
+        "oldMotive":"1 - Inimitié traditionnelle, sans motif connu",
+        "domination":"2 - Domination politique",
+        "retaliation":
+            {"label":"3 - Vengeance, représailles",
+            "sub":{
+                "revenge":"3a - Guerre de vengeance",
+                "vendetta":"3b - Vendetta, feud",
+                "eternal":"3c - Vengeance éternelle"},
+            "cause":{
+                "disrespect":"affront, injure, insulte",
+                "sorcery":"sorcellerie",
+                "murder":"meurtre",
+                "women":"viol, rapt de femmes",
+                "thief":"braconnage, vol, non-paiement",
+                "heresy":"faute religieuse",
+                "escalationMotive":"escalades de violences"}},
+        "expansion":"4 - Appropriation territoriale",
+        "plunder":"5 - Appropriation d'objets / animaux (razzia, vol, braconnage",
+        "humanPlunder":{"label":"6 - Appropriation d'humains","sub":{ 
+            "slavery":"mise en dépendance",
+            "family":"adotion, mariage",
+            "ransom":"rançon",
+            "sacrifice":"sacrifice",
+            "cannibalism":"cannibalism"
+            }
+        },
+        "bodilyPlunder":{
+            "label":"7 - Appropriation de substances corporelles",
+            "sub":{
+                "headPlunder":"tête",
+                "teethPlunder":"dents",
+                "otherPlunder":"autre"
+            }
+        }
+    },
+    "rituals":{
+        "trophies":{
+            "label":"trophées",
+            "sub":{
+                "head":"tête",
+                "reduced":"tête réduite",
+                "scalp":"scalp",
+                "skullCut":"coupe crânienne",
+                "mandibula":"mandibule",
+                "teeth":"dents",
+                "ears":"oreille(s)",
+                "eyes":"yeux",
+                "members":"membre(s)",
+                "hands":"main(s)",
+                "fingers":"doigt(s)",
+                "skin":"peau",
+                "vital":"support d'énergie vitale"
+            }
+        }
+    },
+    "returnRituals":{
+        "womenParticipation":"Les femmes participent aux affrontements",
+        "warriorsGroups":"Présence de société(s) de guerriers",
+        "onirism":"rêves, visions",
+        "fat":"graisse humaine vivifiante",
+        "honors":"système d'honneurs formalisé",
+        "puRitual":"rites purificatoires",
+        "torture":"torture de prisonniers",
+        "money":"compensation financière",
+        "peace":"rituels de paix",
+        "dance":{"label":"danse","sub":{
+            "warDance":"de guerre","victoryDance":"de victoire","scalpDance":"du scalp","womenScalp":"danse féminine du scalp"}}
+    },
+    "fightType":{
+        "unilateral":{"label":"unilatérale","sub":{
+            "uniSolution":{"label":"I - résolutive","sub":{
+                "supremacy":"Is - suprématie","compensation":"Ic - compensation"}
+            },
+            "uniNoSolution":{"label":"II - non résolutive","sub":{
+                "endless":"IIs - vengeance sans fin","plunderSolution":"IIp - pillage, prédation"}
+            }
+        }
+        } ,
+        "symetrical":{"label":"symétrique","sub":{
+            "symSolution":{"label":"III - résolutive","sub":{
+                    "judiciary":"IIIj - judiciaire","otherSolution":"IIIx - autre"}
+                }
+            ,
+            "symNoSolution":{"label":"IV - non résolutive","sub":{
+                    "sacrifice":"IVs - sacrifice","propitiatory":"IVp - propitiatoire","otherNoSolution":"IVx - autre"}
+            }
+        }
+    }}
+    
+}

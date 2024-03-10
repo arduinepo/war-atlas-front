@@ -1,0 +1,78 @@
+<form >
+  <button mat-raised-button color="primary" (click)="searchWars()">Rechercher</button>
+  <button mat-raised-button color="primary" (click)="getAll()">Afficher tous conflits</button>
+
+    <fieldset>
+      <mat-expansion-panel [expanded]="showFilters==true" (opened)="showFilters=true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Filtres
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+    <mat-tab-group animationDuration="0ms">
+  
+        <mat-tab label="Mythes">
+          <app-tab [criteres]="criteres.myths" [critereWidth]="this.fullWidth"></app-tab>
+        </mat-tab>
+  
+        <mat-tab label="Divinités">
+              <mat-accordion>
+  
+                <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Symboles
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <app-tab [criteres]="criteres.gods" [critereWidth]="this.halfWidth" ></app-tab>
+                  <app-tab [criteres]="criteres.equips" [critereWidth]="this.halfWidth"></app-tab>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Association(s)
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <app-tab [criteres]="criteres.godsAttr" [critereWidth]="this.halfWidth"></app-tab>
+                  <app-tab [criteres]="criteres.animals" [critereWidth]="this.halfWidth"></app-tab>
+                </mat-expansion-panel>
+                
+              </mat-accordion>
+        </mat-tab>
+        
+        <mat-tab label="Motifs">
+          <app-tab [criteres]="criteres.motives" [critereWidth]="this.fullWidth"></app-tab>
+        </mat-tab>
+
+        <mat-tab label="Rituels">
+          <app-tab [criteres]="criteres.rituals" [critereWidth]="this.fullWidth"></app-tab>
+          <app-tab [criteres]="criteres.returnRituals" [critereWidth]="this.fullWidth"></app-tab>
+        </mat-tab>
+
+        <mat-tab label="Typologie">
+          <app-tab [criteres]="criteres.fightType" [critereWidth]="this.fullWidth"></app-tab>
+        </mat-tab>
+  
+      </mat-tab-group>
+
+    </mat-expansion-panel>
+    </fieldset>
+    <button mat-raised-button color="primary"  (click)="searchWars()">Rechercher</button>
+    <button mat-raised-button color="primary" (click)="getAll()">Afficher tous conflits</button>
+</form>
+
+<div>
+
+  <div>
+    <h1>Résultats</h1>
+    <button class="result" mat-raised-button *ngFor="let war of wars" (click)="navigate(war.id)" >
+      {{war?.name}}
+      {{war?.ethnie?.name}} ({{war?.ethnie?.region?.name}})
+    </button>
+  </div>
+</div>
+
+<!--<div id="map" style="height:800px;width:1000px"></div>-->
+<div style="height: 800px;width:1000px" id="map" 
+     leaflet [leafletOptions]="options" (leafletMapReady)="onMapReady($event)">
+</div>

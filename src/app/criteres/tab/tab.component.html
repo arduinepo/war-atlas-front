@@ -1,0 +1,5 @@
+<table class="halfWidth">
+    <tr *ngFor="let critere of criteres">
+      <app-motive-choice [critere]="critere" [widthClass]="critereWidth" (selected)="modify(critere)"></app-motive-choice>
+    </tr>
+  </table>

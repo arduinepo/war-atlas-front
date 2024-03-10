@@ -1,0 +1,34 @@
+<!--<td class="{{widthClass}}"><label>{{critere.label}}</label></td>
+<td>
+    <mat-chip-listbox labelPosition="before" [(ngModel)]="critere.value" name="{{critere.name}}" (ngModelChange)="set()">
+        <mat-chip-option value="PR" (selected)="critere.value=='PR'">Présent</mat-chip-option>
+        <mat-chip-option value="AB" (selected)="critere.value=='AB'">Absent</mat-chip-option>
+        <mat-chip-option value="UN" (selected)="critere.value=='UN'">Inconnu</mat-chip-option>
+    </mat-chip-listbox>
+
+    <app-motive-choice *ngFor="let c of critere.sub" [critere]="c" [widthClass]="critereWidth" (selected)="modify(c)"></app-motive-choice>
+
+</td>-->
+
+<div class="{{widthClass}}" *ngIf="editable">{{critere.label}}</div>
+<div class="displayInline">
+    <ng-container *ngIf="editable; else sinon">
+    <mat-chip-listbox labelPosition="before" [(ngModel)]="critere.value" name="{{critere.name}}" (ngModelChange)="set()">
+        <mat-chip-option value="PR" (selected)="critere.value=='PR'">Présent</mat-chip-option>
+        <mat-chip-option value="AB" (selected)="critere.value=='AB'">Absent</mat-chip-option>
+        <mat-chip-option value="UN" (selected)="critere.value=='UN'">Inconnu</mat-chip-option>
+    </mat-chip-listbox>
+    </ng-container>
+    <ng-template #sinon>
+        <mat-chip *ngIf="critere.value!='UN'" color="{{critere.value=='PR'?'primary':'warn'}}" highlighted>{{critere.label}}</mat-chip>
+
+    </ng-template>
+</div>
+<br>
+<div class="sub">
+    <app-motive-choice *ngFor="let c of critere.sub" [critere]="c" [widthClass]="widthClass" (selected)="modify(c)" [editable]="editable"></app-motive-choice>
+</div>
+
+<div class="cause">
+    <app-motive-choice *ngFor="let c of critere.causes" [critere]="c" [widthClass]="widthClass" (selected)="modify(c)" [editable]="editable"></app-motive-choice>
+</div>

@@ -1,0 +1,29 @@
+<div>
+    <div style="float:right;">
+        <br>Légende des critères :
+        <mat-chip-set>
+            <mat-chip color="primary" highlighted>présent</mat-chip>
+            <mat-chip color="warn" highlighted>Absence connue</mat-chip>
+        </mat-chip-set>
+    </div>
+    <div style="float:right;">
+        <button mat-raised-button (click)="goEdit(listFeats[0].conflict.id)">Modifier</button>
+    </div>
+
+    <h1>{{listFeats[0].conflict.ethnie.name}} 
+        <h2>{{listFeats[0].conflict.ethnie.region.name}} ({{listFeats[0].conflict.ethnie.region.continent.name}})</h2>
+        <h3>Coordonnées latitude/longitude : {{listFeats[0].conflict.ethnie.latitude}} {{listFeats[0].conflict.ethnie.longitude}}</h3>
+    </h1>
+</div>
+
+<mat-accordion multi>
+
+    <mat-expansion-panel expanded *ngFor="let feat of listFeats;let i=index" [expanded]="i===0">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                par {{feat.author.username}} le {{feat.created_at | date:'shortDate' }}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-conflict-detail [inList]="true" [feat]="feat"></app-conflict-detail>
+    </mat-expansion-panel>
+</mat-accordion>

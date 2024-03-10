@@ -1,0 +1,30 @@
+<mat-label>Continent</mat-label>
+<mat-form-field>
+  <mat-select [(ngModel)]=ethnie.region.continent.name (ngModelChange)="getRegions()">
+    <mat-option value="Afrique">Afrique</mat-option>
+    <mat-option value="Amérique du Sud">Amérique du Sud</mat-option>
+    <mat-option value="Amérique du Nord">Amérique du Nord</mat-option>
+    <mat-option value="Eurasie">Eurasie</mat-option>
+    <mat-option value="Mésoamérique">Mésoamérique</mat-option>
+    <mat-option value="Océanie">Océanie</mat-option>
+    <mat-option value="Proche-Orient">Proche-Orient</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-label>Région</mat-label>
+<mat-form-field>
+  <mat-select [(ngModel)]=ethnie.region.name (ngModelChange)="getEthnies()">
+    <mat-option *ngFor="let item of regions" value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-label>Ethnie</mat-label>
+<mat-form-field>
+  <mat-select [(ngModel)]=ethnie.name name="ethnie" (ngModelChange)="set()">
+    <mat-option *ngFor="let item of ethnies" value="{{item.name}}">{{item.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<p-autoComplete [(ngModel)]="choix" [group]="true" [suggestions]="filteredTribes" (completeMethod)="filterTribes($event)" [forceSelection]="true" [dropdown]="true" (ngModelChange)="set2()">
+  <ng-template let-group pTemplate="group">
+        <div style="margin-left: 20px;height: 5px;font-size: 15px;">{{ group.label }}</div>
+  </ng-template>
+</p-autoComplete>

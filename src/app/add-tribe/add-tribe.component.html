@@ -1,0 +1,55 @@
+
+<input type="file" class="file-input" (change)="onFileSelected($event)" #upload accept=".csv">
+
+<div class="file-upload">
+  {{filename||"Pas de fichier sélectionné"}}
+  <button mat-mini-fab color="primary" class="upload-btn" (click)="upload.click()">
+  </button>
+</div>
+<button mat-raised-button color="primary" (click)="submitFile()">Importer fichier</button>
+
+<form (ngSubmit)="submitTribe()">
+
+    <fieldset>
+      <mat-label>Continent</mat-label>
+        <mat-form-field>
+          <mat-select [(ngModel)]=this.tribe.region.continent.name name="continent" (ngModelChange)="getRegions()">
+            <mat-option value="Afrique">Afrique</mat-option>
+            <mat-option value="Amérique du Sud">Amérique du Sud</mat-option>
+            <mat-option value="Amérique du Nord">Amérique du Nord</mat-option>
+            <mat-option value="Eurasie">Eurasie</mat-option>
+            <mat-option value="Mésoamérique">Mésoamérique</mat-option>
+            <mat-option value="Océanie">Océanie</mat-option>
+            <mat-option value="Proche-Orient">Proche-Orient</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-label>Région</mat-label>
+        <mat-form-field>
+          <mat-select [(ngModel)]=this.tribe.region.name name="region">
+            <mat-option *ngFor="let item of regions" value="{{item}}">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-label>Ethnie</mat-label>
+        <mat-form-field>
+          <input matInput name="tribe" [(ngModel)]="this.tribe.name" required>
+        </mat-form-field>
+        <mat-label>Famille linguistique</mat-label>
+        <mat-form-field>
+          <mat-select [(ngModel)]=this.tribe.lang name="lang">
+            <mat-option *ngFor="let item of langs" value="{{item}}">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br/>
+        <br/>
+        <mat-label>Latitude</mat-label>
+        <mat-form-field>
+          <input matInput type="number" [(ngModel)]=this.tribe.latitude name="latitude" min="-90" max="90" required>
+        </mat-form-field>
+        <mat-label>Longitude</mat-label>
+        <mat-form-field>
+          <input matInput type="number" [(ngModel)]=this.tribe.longitude name="longitude" min="-180" max="180" required>
+        </mat-form-field>
+    </fieldset>
+
+    <button mat-raised-button color="primary">Soumettre</button>
+</form>

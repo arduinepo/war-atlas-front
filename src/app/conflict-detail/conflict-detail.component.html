@@ -1,0 +1,89 @@
+<div *ngIf="inList==false">
+    <div style="float:right;">
+        Dernière modification par {{feat?.author?.username}} le {{feat?.created_at| date:'shortDate' }}
+        <br>Légende des critères :
+        <mat-chip-set>
+            <mat-chip color="primary" highlighted>présent</mat-chip>
+            <mat-chip color="warn" highlighted>Absence connue</mat-chip>
+        </mat-chip-set>
+    </div>
+    <div style="float:right;">
+        <button mat-raised-button (click)="goEdit(war?.id)">Modifier</button>
+        <button mat-raised-button (click)="goVersions(war?.id)">Historique des versions</button>
+    </div>
+
+    <h1>{{war?.ethnie?.name}} 
+        <h2>{{war?.ethnie?.region?.name}} ({{war?.ethnie?.region?.continent?.name}})</h2>
+        <h3>Coordonnées latitude/longitude : {{war?.ethnie?.latitude}} {{war?.ethnie?.longitude}}</h3>
+    </h1>
+</div>
+
+<mat-accordion multi>
+
+    <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Sources bibliographiques
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+          <div >{{feat?.sources}}</div>
+        </mat-expansion-panel>
+
+    <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Mythes
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-chip-set>
+            <app-motive-choice *ngFor="let critere of criteres('myths')" [critere]="critere" [editable]="false"></app-motive-choice>
+        </mat-chip-set>
+        
+    </mat-expansion-panel>
+
+    <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Divinités
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-chip-set>
+            <app-motive-choice *ngFor="let critere of criteres('gods')" [critere]="critere" [editable]="false"></app-motive-choice>
+        </mat-chip-set>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Rituels
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-chip-set>
+            <app-motive-choice *ngFor="let critere of criteres('rituals')" [critere]="critere" [editable]="false"></app-motive-choice>
+            <app-motive-choice *ngFor="let critere of criteres('returnRituals')" [critere]="critere" [editable]="false"></app-motive-choice>
+        </mat-chip-set>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Motifs
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-chip-set>
+            <app-motive-choice *ngFor="let critere of criteres('motives')" [critere]="critere" [editable]="false"></app-motive-choice>
+        </mat-chip-set>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Typologie
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-chip-set>
+            <app-motive-choice *ngFor="let critere of criteres('fightType')" [critere]="critere" [editable]="false"></app-motive-choice>
+        </mat-chip-set>
+    </mat-expansion-panel>
+
+</mat-accordion>

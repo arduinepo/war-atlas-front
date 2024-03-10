@@ -1,0 +1,25 @@
+label{
+    display: inline-block;
+}
+
+.fullWidth{
+    width:300px;
+    display:inline-block;
+}
+
+.halfWidth{
+    width:100px;
+    display:inline-block;
+}
+
+.displayInline{
+    display:inline-block;
+}
+
+.sub{
+    margin-left: 50px;
+}
+
+.cause{
+    margin-left: 100px;
+}

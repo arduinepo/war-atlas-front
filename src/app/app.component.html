@@ -1,0 +1,29 @@
+<ul>
+        <ng-container *ngIf="isLoggedIn;else sinon">
+            <li>
+                <a routerLink="account" routerLinkActive="active">Mon compte</a>
+            </li>
+            <li>
+                <a routerLink="addTribe" routerLinkActive="active">Ajouter ethnie</a>
+            </li>
+            <li>
+                <a routerLink="addWar" routerLinkActive="active">Ajouter conflit</a>
+            </li>
+            <li>
+                <button (click)="openDialog()" routerLinkActive="active">Se déconnecter</button>
+            </li>
+        </ng-container>
+        <ng-template #sinon>
+            <li>
+                <a routerLink="login" routerLinkActive="active">Se connecter</a>
+            </li>
+            <li>
+                <a routerLink="signUp" routerLinkActive="active">S'inscrire</a>
+            </li>
+        </ng-template>
+        <li>
+            <a routerLink="map" routerLinkActive="active">Rechercher des conflits</a>
+        </li>
+</ul> 
+<router-outlet/>
+
